@@ -37,29 +37,29 @@ the Mover transaction.
 
 ### Before the Move
 
-  Attribute / Access                  State
-  ----------------------------------- --------------------------------------------
-  Department                          HR
-  Job Title                           Senior HR Coordinator
-  Account Status                      Enabled
-  All Employees                       Retained baseline access
-  HR Operations Access Package        Assigned
-  HR Team                             Provisioned through Entitlement Management
-  Finance Operations Access Package   Not assigned
-  Finance Team                        Not provisioned
+| Attribute / Access | State |
+|---|---|
+| Department | HR |
+| Job Title | Senior HR Coordinator |
+| Account Status | Enabled |
+| All Employees | Retained baseline access |
+| HR Operations Access Package | Assigned |
+| HR Team | Provisioned through Entitlement Management |
+| Finance Operations Access Package | Not assigned |
+| Finance Team | Not provisioned |
 
 ### Target State
 
-  Attribute / Access                  Required State
-  ----------------------------------- -------------------
-  Department                          Finance
-  Job Title                           Financial Analyst
-  Account Status                      Remains enabled
-  All Employees                       Retained
-  HR Operations Access Package        Removed
-  HR Team                             Removed
-  Finance Operations Access Package   Delivered
-  Finance Team                        Provisioned
+| Attribute / Access | Required State |
+|---|---|
+| Department | Finance |
+| Job Title | Financial Analyst |
+| Account Status | Remains enabled |
+| All Employees | Retained |
+| HR Operations Access Package | Removed |
+| HR Team | Removed |
+| Finance Operations Access Package | Delivered |
+| Finance Team | Provisioned |
 
 Because this is a **Mover** event rather than a Leaver event, the
 employee's Entra ID account remains active and existing sign-in sessions
@@ -157,34 +157,16 @@ during the role change.
 
 ## Technologies Used
 
-  -----------------------------------------------------------------------
-  Technology                          Purpose
-  ----------------------------------- -----------------------------------
-  Microsoft Entra ID                  Identity directory and access
-                                      platform
-
-  Microsoft Entra Entitlement         Governed Access Package
-  Management                          provisioning and deprovisioning
-
-  Microsoft Graph PowerShell SDK      Identity and entitlement automation
-
-  PowerShell                          Workflow orchestration, validation,
-                                      error handling, and reporting
-
-  Microsoft Graph API                 Programmatic identity and
-                                      entitlement operations
-
-  CSV                                 Simulated authoritative HR mover
-                                      event
-
-  Entra Security Groups               Baseline and departmental resource
-                                      access
-
-  Git / GitHub                        Source control and portfolio
-                                      documentation
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
+| Technology | Purpose |
+|---|---|
+| Microsoft Entra ID | Identity directory and access platform |
+| Microsoft Entra Entitlement Management | Governed Access Package provisioning and deprovisioning |
+| Microsoft Graph PowerShell SDK | Identity and entitlement automation |
+| PowerShell | Workflow orchestration, validation, error handling, and reporting |
+| Microsoft Graph API | Programmatic identity and entitlement operations |
+| CSV | Simulated authoritative HR mover event |
+| Entra Security Groups | Baseline and departmental resource access |
+| Git / GitHub | Source control and portfolio documentation |
 
 ## Identity and Access Model
 
@@ -424,15 +406,15 @@ proceed.
 The automation performs a fresh validation rather than assuming
 previously submitted operations succeeded.
 
-  Final Control                       Required State
-  ----------------------------------- -------------------
-  Department                          Finance
-  Job Title                           Financial Analyst
-  All Employees                       Retained
-  HR Operations Access Package        Removed
-  HR Team                             Removed
-  Finance Operations Access Package   Delivered
-  Finance Team                        Provisioned
+| Final Control | Required State |
+|---|---|
+| Department | Finance |
+| Job Title | Financial Analyst |
+| All Employees | Retained |
+| HR Operations Access Package | Removed |
+| HR Team | Removed |
+| Finance Operations Access Package | Delivered |
+| Finance Team | Provisioned |
 
 Only when every control passes does the automation return:
 
@@ -455,27 +437,15 @@ The automation produces three CSV reports:
 -   **Mover-Audit-Report.csv** --- provides a control-level record of
     changes and PASS/FAIL results.
 
-  -----------------------------------------------------------------------
-  Control           Previous State    Current State     Action
-  ----------------- ----------------- ----------------- -----------------
-  Department        HR                Finance           Updated
-
-  Job Title         Senior HR         Financial Analyst Updated
-                    Coordinator                         
-
-  All Employees     Present           Present           Retained
-
-  HR Operations     Delivered         Removed           Deprovisioned
-  Access Package                                        
-
-  HR Team           Present           Removed           Deprovisioned
-
-  Finance           Not Assigned      Delivered         Provisioned
-  Operations Access                                     
-  Package                                               
-
-  Finance Team      Not Present       Present           Provisioned
-  -----------------------------------------------------------------------
+| Control | Previous State | Current State | Action |
+|---|---|---|---|
+| Department | HR | Finance | Updated |
+| Job Title | Senior HR Coordinator | Financial Analyst | Updated |
+| All Employees | Present | Present | Retained |
+| HR Operations Access Package | Delivered | Removed | Deprovisioned |
+| HR Team | Present | Removed | Deprovisioned |
+| Finance Operations Access Package | Not Assigned | Delivered | Provisioned |
+| Finance Team | Not Present | Present | Provisioned |
 
 ![Mover Audit Report](Screenshots/15-Mover-Audit-Report.png)
 
