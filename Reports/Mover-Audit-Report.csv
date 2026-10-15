@@ -1,0 +1,8 @@
+"Timestamp","Employee","Control","Previous","Current","Action","Result"
+"2026-10-14 22:17:19","Bryce Johnson","Department","HR","Finance","Updated","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","Job Title","Senior HR Coordinator","Financial Analyst","Updated","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","All Employees","Present","Present","Retained","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","HR Operations Access Package","Delivered","Removed","Deprovisioned","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","HR Team","Present","Removed","Deprovisioned","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","Finance Operations Access Package","Not Assigned","Delivered","Provisioned","PASS"
+"2026-10-14 22:17:19","Bryce Johnson","Finance Team","Not Present","Present","Provisioned","PASS"

@@ -1,0 +1,2 @@
+Timestamp,DisplayName,UserPrincipalName,Department,JobTitle,AccountEnabled,AllEmployeesAccess,HrOperationsAccessPackage,HrTeamMembership,FinanceOperationsAccessPackage,FinanceTeamMembership,MoverStatus
+10/14/2026 22:17,Bryce Johnson,bryce.johnson@contoso.com,Finance,Financial Analyst,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,SUCCESS
